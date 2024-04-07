@@ -1,6 +1,6 @@
 {
 	"name": "wait-polled-condition",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Promise that resolves when a condition is met, polling the condition at a given interval",
 	"license": "MIT",
 	"author": "Aimarekin <aimarekin@gmail.com>",

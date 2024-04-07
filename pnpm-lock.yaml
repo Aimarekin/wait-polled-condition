@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  wait:
-    specifier: ^0.4.2
-    version: 0.4.2
-
 devDependencies:
   '@typescript-eslint/eslint-plugin':
     specifier: 7.5.0
@@ -1078,11 +1073,6 @@ packages:
     dependencies:
       punycode: 2.3.1
     dev: true
-
-  /wait@0.4.2:
-    resolution: {integrity: sha512-g4Uu25y9MJ3jtBcrRDDXeI/f7lBNtVmNUM3Xd78S19tm1gZutDkL/f6UEcMi/NqWvKZ74Mhrb+4LwpYbjG6XYA==}
-    hasBin: true
-    dev: false
 
   /which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
