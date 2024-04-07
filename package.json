@@ -1,0 +1,28 @@
+{
+	"name": "wait-polled-condition",
+	"version": "1.0.0",
+	"description": "Promise that resolves when a condition is met, polling the condition at a given interval",
+	"license": "MIT",
+	"author": "Aimarekin <aimarekin@gmail.com>",
+	"repository": "github:Aimarekin/wait-polled-condition",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"main": "dist/index.js",
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "7.5.0",
+		"eslint": "8.57.0",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-jsdoc": "^48.2.3",
+		"eslint-plugin-prettier": "5.1.3",
+		"prettier": "3.2.5",
+		"typescript": "^5.4.4"
+	}
+}

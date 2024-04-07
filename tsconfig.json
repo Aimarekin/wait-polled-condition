@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"target": "ES2018",
+		"lib": ["ES2018", "DOM"],
+		"moduleResolution": "node",
+		"removeComments": false,
+		"outDir": "dist",
+		"declaration": true,
+		"sourceMap": true,
+		"rootDir": "src"
+	},
+	"include": [ "src/**/*" ]
+}

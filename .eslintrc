@@ -1,0 +1,51 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2015,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"ignorePatterns": [
+		"/dist",
+		"/node_modules"
+	],
+	"env": {
+		"browser": true,
+		"es2015": true
+	},
+	"plugins": [
+		"@typescript-eslint",
+		"prettier",
+		"eslint-plugin-jsdoc"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
+	"rules": {
+		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/ban-types": [
+			"error",
+			{
+				"extendDefaults": true,
+				"types": {
+					"{}": false
+				}
+			}
+		],
+		"prettier/prettier": [
+			"warn",
+			{
+				"printWidth": 140,
+				"tabWidth": 4,
+				"trailingComma": "none",
+				"useTabs": true,
+				"bracketSameLine": false,
+				"arrowParens": "always",
+				"semi": true
+			}
+		],
+		"eqeqeq": "error"
+	}
+}
