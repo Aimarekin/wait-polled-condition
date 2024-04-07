@@ -30,12 +30,17 @@ export async function isConditionMet(condition: Condition): Promise<boolean> {
  */
 export default function waitPolledCondition(condition: Condition, interval = 1000, timeout = -1, signal?: AbortSignal): Promise<void> {
 	return new Promise((resolve, reject) => {
+		let scheduledCheckCondition: ReturnType<typeof setTimeout> | undefined;
+
 		if (signal) {
 			if (signal.aborted) {
 				reject(new DOMException("Aborted", "AbortError"));
 				return;
 			}
 			signal.addEventListener("abort", () => {
+				if (scheduledCheckCondition) {
+					clearTimeout(scheduledCheckCondition);
+				}
 				reject(new DOMException("Aborted", "AbortError"));
 			});
 		}
@@ -64,7 +69,10 @@ export default function waitPolledCondition(condition: Condition, interval = 100
 			if (timeout === 0 || (timeout > 0 && Date.now() - startTime > timeout)) {
 				reject(new Error("Timeout"));
 			} else {
-				setTimeout(checkCondition, timeout > 0 ? Math.min(interval, timeout - (Date.now() - startTime)) : interval);
+				scheduledCheckCondition = setTimeout(
+					checkCondition,
+					timeout > 0 ? Math.min(interval, timeout - (Date.now() - startTime)) : interval
+				);
 			}
 		}
 
